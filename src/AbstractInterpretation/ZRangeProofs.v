@@ -630,6 +630,7 @@ Module Compilers.
                            | intros; mul_by_halves_t ].
             (** For command-line debugging, we display goals that should not remain *)
             all: [ > idtac "WARNING: Remaining goal:"; print_context_and_goal () .. | | ].
+            { apply H; assumption. }
             { intros.
               rewrite Z.le_sub_1_iff.
               break_innermost_match; Z.ltb_to_lt;
