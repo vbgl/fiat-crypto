@@ -541,14 +541,14 @@ Section WordByWordMontgomery.
       clear dependent B; clear dependent k; clear dependent ri; clear dependent Npos.
 
     Lemma small_add : small (add Av Bv).
-    Proof. do_clear; unfold add; t_small. Qed.
+    Proof. clear R_correct. do_clear; unfold add; t_small. Qed.
     Lemma small_sub : small (sub Av Bv).
     Proof. do_clear; unfold sub; t_small. Qed.
     Lemma small_opp : small (opp Av).
     Proof. clear dependent Bv; do_clear; unfold opp, sub; t_small. Qed.
 
     Lemma eval_add : eval (add Av Bv) = eval Av + eval Bv + if (eval N <=? eval Av + eval Bv) then -eval N else 0.
-    Proof. do_clear; unfold add; autorewrite with push_eval; reflexivity. Qed.
+    Proof. clear R_correct. do_clear; unfold add; autorewrite with push_eval; reflexivity. Qed.
     Lemma eval_sub : eval (sub Av Bv) = eval Av - eval Bv + if (eval Av - eval Bv <? 0) then eval N else 0.
     Proof. do_clear; unfold sub; autorewrite with push_eval; reflexivity. Qed.
     Lemma eval_opp : eval (opp Av) = (if (eval Av =? 0) then 0 else eval N) - eval Av.
