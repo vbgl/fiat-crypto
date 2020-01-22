@@ -3,7 +3,7 @@
 	url = https://github.com/JasonGross/coq-scripts.git
 [submodule "bbv"]
 	path = bbv
-	url = ../../mit-plv/bbv.git
+	url = https://github.com/vbgl/bbv
 [submodule "coqprime"]
 	path = coqprime
 	url = https://github.com/thery/coqprime
